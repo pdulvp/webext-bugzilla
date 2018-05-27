@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Bugzilla Automatic Comment from Status",
+  "author": "pdulvp@gmail.com",
+  "version": "1.0",
+  "homepage_url": "https://bitbucket.org/pdulvp/webext-bugzilla",
+  "description": "This extension automatically prefills issue's comment based on its status and resolution fields",
+
+  "applications": {
+	  "gecko": {
+		"id": "bugzilla-auto-filler@pdulvp",
+		"strict_min_version": "60.0"
+	  }
+	},
+
+  "icons": {
+    "512": "icons/logo-512.png",
+    "256": "icons/logo-256.png",
+    "48": "icons/logo-48.png",
+    "32": "icons/logo-32.png",
+    "16": "icons/logo-16.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/show_bug.cgi*"],
+      "js": ["content_scripts/bugzilla.js"]
+    }
+  ]
+
+}
